@@ -1,5 +1,7 @@
 # Container image: Archlinux Ansible
 
+[![Build Status](https://travis-ci.com/chzerv/docker-archlinux-ansible.svg?branch=master)](https://travis-ci.com/chzerv/docker-archlinux-ansible)
+
 This Dockerfile builds an Archlinux-based container with Ansible and other Ansible testing tools pre-intalled.
 
 # Branches/Tags

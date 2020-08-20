@@ -13,7 +13,7 @@ RUN pacman -S --noconfirm \
     which \
     vim
 
-RUN pip install $ansible_packages
+RUN pip install --no-cache $ansible_packages
 
 RUN mkdir -p /etc/ansible
 RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts

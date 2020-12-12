@@ -2,7 +2,7 @@ FROM archlinux:latest
 LABEL maintainer "Xristos Zervakis"
 
 # Install Ansible and related packages via pip so we get the latest version.
-ENV ansible_packages "ansible ansible-lint yamllint molecule molecule-containers"
+ENV ansible_packages "ansible ansible-lint yamllint molecule molecule-docker molecule-podman"
 
 RUN pacman -Syu --noconfirm
 

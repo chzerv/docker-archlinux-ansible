@@ -1,6 +1,9 @@
 FROM archlinux:latest
 LABEL maintainer "Xristos Zervakis"
 
+# Avoid things that systemd does on actual hardware.
+ENV container docker
+
 # Install Ansible and related packages via pip so we get the latest version.
 ENV ansible_packages "ansible ansible-lint yamllint molecule molecule-docker molecule-podman"
 

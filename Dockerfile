@@ -11,10 +11,22 @@ RUN pacman -Syu --noconfirm
 
 RUN pacman -S --noconfirm \
     sudo \
+    systemd \
+  && \
+  (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -vf $i; done); \
+    rm -vf /lib/systemd/system/multi-user.target.wants/*; \
+    rm -vf /etc/systemd/system/*.wants/*; \
+    rm -vf /lib/systemd/system/local-fs.target.wants/*; \
+    rm -vf /lib/systemd/system/sockets.target.wants/*udev*; \
+    rm -vf /lib/systemd/system/sockets.target.wants/*initctl*; \
+    rm -vf /lib/systemd/system/basic.target.wants/*;
+
+RUN pacman -S --noconfirm \
     python \
     python-pip \
     which \
-    vim
+    vim \
+&& yes | pacman -Scc || true
 
 RUN pip install --no-cache $ansible_packages
 

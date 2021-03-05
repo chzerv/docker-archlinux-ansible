@@ -1,5 +1,8 @@
 # Archlinux Image for Ansible Testing
 
+>**NOTE**: This image is now  **DEPRECATED**: Use:
+>+ [archlinux-systemd-ansible](https://github.com/chzerv/archlinux-systemd-ansible)
+
 ![Build](https://github.com/chzerv/docker-archlinux-ansible/workflows/Build/badge.svg?branch=master)
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/chzerv/docker-archlinux-ansible)
 
